@@ -11,7 +11,7 @@ The first two are identifying your application. You have to register the app bec
 The third one is the key which identifies your azure abo. If your on the azure website it is basically everywhere, here is one place to find it: https://blogs.msdn.microsoft.com/mschray/2015/05/13/getting-your-azure-guid-subscription-id/
 The last one also not too hard to find, here is one way to do it: http://merill.net/2015/01/how-to-get-the-azure-ad-tenant-id-without-powershell/
 
-At last you have to give your new registered application the right to read the data in azure.
+At last you have to give your new registered application the right to read the data in azure, therefore add your application to your resourcegroup as reader this can be done in the accesscontrol.
 
 Now the hard stuff is over ;)
 
@@ -28,6 +28,15 @@ more to come if Microsoft opens up... The REST API is very limited at the moment
 Be careful there is a direct context between subscriptionId -> resourceGroup -> name. You could have multiple subscriptionIds, where every id contains multiple groups with multiple objects.
 
 ```
+go run check_azure.go --clientId XXX --clientSecret XXX --subscriptionId XXX --tenantId XXX mode s show
+OK - see below
+0: Microsoft Imagine
+	ID: XXX
+	SpendingLimit: On
+1: Kostenlose Testversion
+	ID: XXX
+	SpendingLimit: On
+
 go run check_azure.go --clientId XXX --clientSecret XXX --subscriptionId XXX --tenantId XXX mode cvm cpu --resourceGroup test --name Ubuntu
 OK - Percentage CPU last checked: 2016-11-23 09:15:00 +0100 CET|'Percentage CPU'=0.177125%;80;90;; 
 
