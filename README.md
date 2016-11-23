@@ -19,9 +19,9 @@ Currently supported are
 - Subscriptions
 - Classic Virtual Machines
 
-- CPU
-- Network
-- Disk
+ - CPU
+ - Network
+ - Disk
 
 more to come if Microsoft opens up... The REST API is very limited at the moment.
 
